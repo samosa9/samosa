@@ -1,0 +1,364 @@
+1.	Design a webpage using different text formatting tags
+<!DOCTYPE html>
+<html><head>
+<title> diffrent text formatting tags </title></head >
+<body>
+<h1> heading 1 </h1>
+<h2> heading 2 </h2>
+<p> the gardener poem says</p>
+Silly gardner! Summer goes<br>
+and winter comes with pinching<br>
+when in the garden bare and brown<br>
+You Must Tay your barrow down<br>
+<b><li><u> hello friends </u><li></b>
+<p>h<sub>2</sub>So<sub>4</sub><br>
+(a+b)<sup>2</sup> = a<sup>2</sup>+2ab+ b<sup>2</sup><br>
+h<sub>2</sub>o<br>
+<Pre> hello friends how are you? I am fine and
+I hope you are also fine.</pre><br><br>
+</body>
+</html>
+
+2.	Design a web page with a form that uses all types of control
+<!DOCTYPE html>
+<html>
+<head>
+    <title>www.form.com</title>
+</head>
+<body bgcolor="#C33999" text="white">
+    <center>
+        <b><i><u>
+            <font face="Arial Black" color="#FFFF66" size="7">
+                ENTER FOR REGISTRATION
+            </font>
+        </u></i></b>
+    </center>
+    
+    <form action="mailto:info@sophiocollegemumbai.com" method="post">
+        <p>NAME: <input type="text" size="20"></p>
+        <p>PASSWORD: <input type="password" size="15"></p>
+        <p>ADDRESS:</p>
+        <textarea rows="2" cols="15"></textarea>
+        
+        <p>GENDER:</p>
+        <input type="radio" name="gender" value="male"> MALE
+        <input type="radio" name="gender" value="female"> FEMALE
+        
+        <p>CLASS:</p>
+        <select name="class">
+            <option value="FYBSCIT">FYBSCIT</option>
+            <option value="SYBSCIT">SYBSCIT</option>
+            <option value="TYBSCIT">TYBSCIT</option>
+        </select>
+        
+        <p>COUNTRY:</p>
+        <select name="country">
+            <option value="ind">India</option>
+            <option value="nep">Nepal</option>
+            <option value="sik">Sri Lanka</option>
+            <option value="eng">England</option>
+        </select>
+        
+        <p>SUBJECT:</p>
+        <input type="checkbox" name="subject" value="web_technologies"> Web Technologies<br>
+        <input type="checkbox" name="subject" value="applied_math"> Applied Mathematics<br>
+        <input type="checkbox" name="subject" value="networking"> Introduction to Networking<br>
+        <input type="checkbox" name="subject" value="dbms"> DBMS<br>
+        <input type="checkbox" name="subject" value="digital_communication"> Digital Communication<br>
+        
+        <p>
+            <input type="submit" value="SEND">
+            <input type="reset" value="CLEAR">
+        </p>
+    </form>
+</body>
+</html>
+
+3.	Design a web page with links to different pages and allow navigation between web pages.
+a) Create a page one.html having a link to two.html. Create two.html having a link to three.html. Print "Welcome to Hyperlinks" in three.html.
+b) Create an HTML page and demonstrate "Hyperlinking to anchor", i.e., linking within the same page using the concept of bookmarks/anchors.
+
+#One HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>One HTML</title>
+</head>
+<body>
+    <a href="two.html">Go To Two HTML</a>
+</body>
+</html>
+
+#Two HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two HTML</title>
+</head>
+<body>
+    <p>Welcome to Two HTML</p>
+    <a href="three.html">Go to Three HTML</a>
+</body>
+</html>
+
+#Three HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three HTML</title>
+</head>
+<body>
+    Welcome to Hyperlinks
+    <p><a href="one.html">Go to One HTML</a></p>
+</body>
+</html>
+
+4.	Internal HTML Link
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internal Link HTML</title>
+</head>
+<body>
+    <a name="top">Top Region</a>
+    <br>
+    <a href="#bottom">Go to Bottom</a>
+    <p> <!-- Add large textual content here --> </p>
+    <a name="bottom">Bottom Region</a>
+    <br>
+    <a href="#top">Go to Top</a>
+</body>
+</html>
+5.	Table HTML
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table HTML</title>
+</head>
+<body bgcolor="green">
+    <table width="100%" height="100%" border="2" bgcolor="pink" cellspacing="10" cellpadding="25">
+        <tr>
+            <td>TIMING</td>
+            <td>MONDAY</td>
+            <td>TUESDAY</td>
+            <td>WEDNESDAY</td>
+            <td>THURSDAY</td>
+            <td>FRIDAY</td>
+            <td>SATURDAY</td>
+        </tr>
+        <tr>
+            <td>8:00 - 9:00</td>
+            <td>&nbsp;</td>
+            <td>CUP (3)</td>
+            <td>HBSP</td>
+            <td>NSM (Lab5)</td>
+            <td>NCLAB</td>
+            <td rowspan="2">WP PR 2BA</td>
+        </tr>
+            <td>9:00 - 10:00</td>
+            <td>OOPS (37)</td>
+            <td rowspan="2">MP (Labs) PR</td>
+            <td>NSM (37)</td>
+            <td rowspan="2">NSM (Labs) PR</td>
+            <td>CN (Lab4)</td>
+        </tr>
+        <tr>
+            <td>10:00 - 11:00</td>
+            <td>MP (37)</td>
+            <td>NSM (37)</td>
+            <td>&nbsp; & HShP;</td>
+        </tr>
+        <tr>
+            <td>OOPS PR29 M</td>
+            <td>11:00 - 11:30</td>
+            <td colspan="6" align="center">
+                <h1>Break</h1>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+6.	Image Mapping
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Map</title>
+</head>
+<body>
+    <h1>Image Mapping Example</h1>
+    
+    <img src="image.jpg" usemap="#map" alt="Image Map" width="600">
+    
+    <map name="map">
+        <area shape="rect" coords="38,48,192,139" href="http://www.google.com" alt="Rectangle">
+        <area shape="circle" coords="133,370,80" href="http://www.facebook.com" alt="Circle">
+        <area shape="poly" coords="538,292,424,620,424,458" href="sopt.html" alt="Polygon">
+    </map>
+</body>
+</html>
+7.	Multimedia Audio and Video
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multimedia Audio & Video</title>
+</head>
+<body>
+
+    <h1>Playing Audio Here!</h1>
+    <audio src="1.mp3" type="audio/mpeg" controls autoplay loop></audio>
+
+    <h1>Playing Video Here!</h1>
+    <video src="BlueStone.mp4" type="video/mp4" controls autoplay loop width="600"></video>
+
+</body>
+</html>
+
+#Multimedia video
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multimedia Video</title>
+</head>
+<body>
+
+    <h1>Video File on the Web Page with Controls</h1>
+    <video src="1.mp4" type="video/mp4" controls autoplay loop height="150" width="150"></video>
+
+</body>
+</html>
+8.	Nested List
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nested List Example</title>
+</head>
+<body bgcolor="#0011FF" text="yellow">
+
+    <h1>Course Structure</h1>
+
+    <ul type="square">
+        <li>FYBSC (IT) Semester I
+            <ul>
+                <li>English</li>
+                <li>Maths</li>
+                <li>DBMS</li>
+                <li>Networking</li>
+                <li>C Programming</li>
+            </ul>
+        </li>
+
+        <li>FYBSC (IT) Semester II
+            <ul>
+                <li>Web Technology</li>
+                <li>Math II</li>
+                <li>C Programming</li>
+                <li>Networking</li>
+            </ul>
+        </li>
+
+        <li>SYBSC (IT) Semester I
+            <ul>
+                <li>Logic and Discrete Maths</li>
+                <li>Java</li>
+                <li>Advanced SQL</li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+</html>
+
+
+
+9.	External Style Sheet
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WWW.EXTERNAL.STYLE.COM</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <p>These are plants where</p>
+    <h3>Ovules are not enclosed in an</h3>
+    <h4>Ovary but are exposed</h4>
+    <b>Sporophyte consists of well-developed roots, stem, and leaves.</b>
+
+</body>
+</html>
+10.	Internal CSS
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WWW.STYLE.COM</title>
+</head>
+<body>
+    <style>
+        p {
+            font-family: "Bella Fashion Personal Use";
+            color: red;
+            font-size: 20px;
+            background-color: pink;
+            margin-right: 100px;
+            margin-left: 100px;
+            letter-spacing: 10px;
+        }
+
+        b {
+            font-family: "Tahoma";
+            font-size: 30px;
+            background-color: green;
+            color: white;
+            margin-right: 20px;
+            margin-left: 100px;
+            letter-spacing: 20px;
+        }
+    </style>
+
+    <p>These are plants where ovules are not enclosed in an ovary but are exposed.</p>
+    <b>Sporophyte consists of well-developed roots, stem, and leaves.</b>
+
+</body>
+</html>
+
+11.	CSS
+/* CSS File: st.css (Cascading Style Sheet) */
+
+p {
+    font-family: "Arial Black";
+    color: red;
+    font-size: 20px;
+    background-color: pink;
+    margin-right: 10px;
+    margin-left: 20px;
+    letter-spacing: 10px;
+}
+
+b {
+    font-family: "Bella Fashion Personal Use";
+    color: white;
+    font-size: 10px;
+    background-color: green;
+    margin-right: 15px;
+    margin-left: 25px;
+    letter-spacing: 8px;
+}
+
+h3 {
+    font-family: "Times New Roman";
+    color: red;
+    font-size: 30px;
+    background-color: lightblue;
+    margin-right: 5px;
+}
+
+h4 {
+    font-family: "Tahoma";
+    color: green;
+    font-size: 10px;
+    background-color: yellow;
+    margin-right: 20px;
+    margin-left: 10px;
+    letter-spacing: 10px;
+}

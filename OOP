@@ -1,0 +1,525 @@
+
+Classes and methods
+#include <iostream.h>
+#include <conio.h>
+
+class pract1a
+{
+private:
+    int empid;
+    char ename[40];
+    int sal;
+
+public:
+    void accept()
+    {
+        cout << "\nEnter the Employee ID: ";
+        cin >> empid;
+        cout << "\nEnter Employee Name: ";
+        cin >> ename;
+        cout << "\nEnter Employee Salary: ";
+        cin >> sal;
+    }
+
+    void show()
+    {
+        cout << "\nEmployee ID: " << empid << endl;
+        cout << "Employee Name: " << ename << endl;
+        cout << "Employee Salary: " << sal << endl;
+    }
+};
+
+void main()
+{
+    clrscr();
+    pract1a obj;
+    obj.accept();
+    obj.show();
+    getch();
+}
+
+Basic program and method
+#include <iostream.h>
+#include <conio.h>
+
+class pract1b
+{
+private:
+    int rollno;
+    char sname[40];
+    int marks;
+
+    void getData()
+    {
+        cout << "\nEnter the roll number: ";
+        cin >> rollno;
+        cout << "\nEnter student name: ";
+        cin >> sname;
+        cout << "\nEnter marks of student: ";
+        cin >> marks;
+    }
+
+public:
+    void displayData()
+    {
+        getData();
+        cout << "\nRoll Number: " << rollno << endl;
+        cout << "Student Name: " << sname << endl;
+        cout << "Student Marks: " << marks << endl;
+    }
+};
+
+void main()
+{
+    clrscr();
+    pract1b obj;
+    obj.displayData();
+    getch();
+}
+Using friend class
+#include <iostream.h>
+#include <conio.h>
+
+class pract2a
+{
+private:
+    int real, img;
+
+public:
+    void accept()
+    {
+        cout << "\nEnter the real number of complex number: ";
+        cin >> real;
+        cout << "Enter the imaginary number of complex number: ";
+        cin >> img;
+    }
+
+    void show()
+    {
+        cout << real << "\t+\t" << img << "i" << endl;
+    }
+
+    friend pract2a add(pract2a o1, pract2a o2);
+};
+
+pract2a add(pract2a o1, pract2a o2)
+{
+    pract2a temp;
+    temp.real = o1.real + o2.real;
+    temp.img = o1.img + o2.img;
+    return temp;
+}
+
+void main()
+{
+    clrscr();
+    pract2a c1, c2, c3;
+    cout << "Enter first complex number:" << endl;
+    c1.accept();
+    cout << "Enter second complex number:" << endl;
+    c2.accept();
+    c3 = add(c1, c2);
+    cout << "\nFirst complex number: ";
+    c1.show();
+    cout << "Second complex number: ";
+    c2.show();
+    cout << "Addition of both complex numbers: ";
+    c3.show();
+    getch();
+}
+Using friend class 2b
+#include <iostream.h>
+#include <conio.h>
+
+class pract2bb; // Forward declaration
+
+class pract2ba {
+private:
+    int a[3][3];
+public:
+    void get();
+    void show();
+    friend void sum(pract2ba o1, pract2bb o2);
+};
+
+class pract2bb {
+private:
+    int b[3][3];
+public:
+    void get();
+    void show();
+    friend void sum(pract2ba o1, pract2bb o2);
+};
+
+void pract2ba::get() {
+    cout << "\nEnter the elements of matrix 1:\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cin >> a[i][j];
+        }
+    }
+}
+
+void pract2ba::show() {
+    cout << "\n*** The elements of matrix 1 ***\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << a[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void pract2bb::get() {
+    cout << "\nEnter the elements of matrix 2:\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cin >> b[i][j];
+        }
+    }
+}
+
+void pract2bb::show() {
+    cout << "\n*** The elements of matrix 2 ***\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << b[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void sum(pract2ba o1, pract2bb o2) {
+    int c[3][3];
+    cout << "\n*** The sum of matrix 1 and matrix 2 is: ***\n";
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            c[i][j] = o1.a[i][j] + o2.b[i][j];
+            cout << c[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void main() {
+    clrscr();
+    pract2ba obj1;
+    pract2bb obj2;
+
+    obj1.get();
+    obj2.get();
+
+    obj1.show();
+    obj2.show();
+
+    sum(obj1, obj2);
+
+    getch();
+}
+Construction and method overloading 
+#include <iostream.h>
+#include <conio.h>
+
+class exp3a {
+private:
+    float real, img;
+public:
+    exp3a()  // Default constructor
+    {
+        real = 0;
+        img = 0;
+    }
+
+    exp3a(float r, float i)  // Parameterized constructor
+    {
+        real = r;
+        img = i;
+    }
+
+    void show()  // Function to display complex number
+    {
+        cout << real << " + " << img << "i" << endl;
+    }
+
+    exp3a sum(exp3a c1)  // Function to add two complex numbers
+    {
+        exp3a c3;
+        c3.real = real + c1.real;
+        c3.img = img + c1.img;
+        return c3;
+    }
+};
+
+void main()
+{
+    clrscr();
+    exp3a c1(4.5, 5.5), c2(2.5, 1.5), c3;
+
+    cout << "First complex number: ";
+    c1.show();
+
+    cout << "Second complex number: ";
+    c2.show();
+
+    c3 = c1.sum(c2);
+
+    cout << "Sum of two complex numbers: ";
+    c3.show();
+
+    getch();
+}
+Construction and method overloading 3b
+#include <iostream.h>
+#include <conio.h>
+
+class geometry {
+    int l, b;
+public:
+    int area(int x) {   // Area of square
+        l = b = x;
+        return (l * b);
+    }
+
+    int area(int x, int y) {   // Area of rectangle
+        l = x;
+        b = y;
+        return (l * b);
+    }
+
+    int volume(int x) {   // Volume of cube
+        l = x;
+        return (l * l * l);
+    }
+};
+
+void main() {
+    clrscr();
+    geometry ob;
+
+    cout << "\nArea of square: " << ob.area(10);
+    cout << "\nArea of rectangle: " << ob.area(10, 20);
+    cout << "\nVolume of cube: " << ob.volume(5);
+
+    getch();
+}
+Operator overloading
+#include <iostream.h>
+#include <conio.h>
+
+class pract4a {
+private:
+    int a, b;
+public:
+    void get() {
+        cout << "\nEnter the value of a and b" << endl;
+        cin >> a >> b;
+    }
+
+    void show() {
+        cout << "\nA = \t" << a << endl;
+        cout << "B = \t" << b << endl;
+    }
+
+    void operator -() {  // Overloading unary minus
+        a = -a;
+        b = -b;
+    }
+};
+
+void main() {
+    clrscr();
+    pract4a ob;
+    ob.get();
+
+    cout << "\nValues before overloading:";
+    ob.show();
+
+    -ob;  // Applying unary minus operator
+
+    cout << "\nValues after overloading:";
+    ob.show();
+
+    getch();
+}
+4b
+#include <iostream.h>
+#include <conio.h>
+
+class exp4b {
+    int hrs, min, sec;
+
+public:
+    void get() {
+        cout << "\nEnter hours: ";
+        cin >> hrs;
+        cout << "Enter minutes: ";
+        cin >> min;
+        cout << "Enter seconds: ";
+        cin >> sec;
+    }
+
+    void show() {
+        cout << "\nTime = " << hrs << " hrs " << min << " mins " << sec << " secs" << endl;
+    }
+
+    exp4b operator + (exp4b ob1) {
+        exp4b ob2;
+        ob2.sec = sec + ob1.sec;
+        ob2.min = min + ob1.min + (ob2.sec / 60);
+        ob2.sec = ob2.sec % 60;
+        ob2.hrs = hrs + ob1.hrs + (ob2.min / 60);
+        ob2.min = ob2.min % 60;
+        return ob2;
+    }
+};
+
+void main() {
+    clrscr();
+    exp4b o1, o2, o3;
+    cout << "\n******** Enter Time 1 ********" << endl;
+    o1.get();
+    cout << "\n******** Enter Time 2 ********" << endl;
+    o2.get();
+
+    o3 = o1 + o2;  // Using overloaded + operator
+
+    cout << "\n******** Resultant Time ********" << endl;
+    o3.show();
+    getch();
+}
+Single level inheritance
+#include <iostream.h>
+#include <conio.h>
+
+class base {
+protected:
+    int x;
+public:
+    void get() {
+        cout << "\nEnter the value of x: ";
+        cin >> x;
+    }
+};
+
+class derived : public base {
+private:
+    int y;
+public:
+    void get() {
+        base::get(); // call base class get() to input x
+        cout << "Enter the value of y: ";
+        cin >> y;
+    }
+    void show() {
+        cout << "\nValue of x = " << x << endl;
+        cout << "Value of y = " << y << endl;
+    }
+};
+
+void main() {
+    clrscr();
+    derived d;
+    d.get();
+    d.show();
+    getch();
+}
+Multiple inheritace
+#include <iostream.h>
+#include <conio.h>
+
+class base1 {
+protected:
+    int a;
+public:
+    void get() {
+        cout << "\nEnter the value of A: ";
+        cin >> a;
+    }
+};
+
+class base2 {
+protected:
+    int b;
+public:
+    void get() {
+        cout << "\nEnter the value of B: ";
+        cin >> b;
+    }
+};
+
+class derived : public base1, public base2 {
+public:
+    void show() {
+        cout << "\nValue of A = " << a;
+        cout << "\nValue of B = " << b << endl;
+    }
+};
+
+void main() {
+    clrscr();
+    derived d;
+    cout << "\n*** Enter values for base classes ***\n";
+    d.base1::get();
+    d.base2::get();
+    d.show();
+    getch();
+}
+Implement the concept of method overloading
+#include <iostream.h>
+#include <conio.h>
+
+class base {
+public:
+    virtual void show()  // use virtual for method overriding
+    {
+        cout << "\nShow of Base class" << endl;
+    }
+};
+
+class derived : public base {
+public:
+    void show()  // override the base class method
+    {
+        cout << "\nShow of Derived class" << endl;
+    }
+};
+
+void main() {
+    clrscr();
+    base *ptr;          // base class pointer
+    derived obj;        // derived class object
+    ptr = &obj;         // point to derived class object
+
+    ptr->show();        // calls derived class function due to virtual keyword
+
+    getch();
+}
+Show the use of virtual funtions
+#include <iostream.h>
+#include <conio.h>
+
+class base {
+public:
+    virtual void show()  // virtual function for runtime polymorphism
+    {
+        cout << "\nShow of Base class" << endl;
+    }
+};
+
+class derived : public base {
+public:
+    void show()  // overriding base class function
+    {
+        cout << "\nDerived class show function" << endl;
+    }
+};
+
+void main() {
+    clrscr();
+    base *b;      // base class pointer
+    derived d;    // derived class object
+    b = &d;       // base class pointer pointing to derived class object
+    b->show();    // calls derived class function due to virtual function
+
+    getch();
+}
